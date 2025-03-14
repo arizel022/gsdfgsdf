@@ -17,19 +17,7 @@ function browsersync() {
   });
 }
 
-function scripts() {
-  return src([
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/mixitup/dist/mixitup.js',
-    'app/js/**/*.js',
-    '!app/js/main.min.js'
-  ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
-}
+
 
 function styles() {
   return src(['node_modules/slick-carousel/slick/slick.css',
